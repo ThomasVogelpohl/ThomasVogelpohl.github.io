@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>Syntax</title>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(171, 178, 191); overflow: auto; background-color: rgb(40, 44, 52); }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(124, 135, 156); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(82, 139, 255); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(124, 135, 156); border-color: rgb(75, 83, 98); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top-width: 2px; border-top-style: dashed; border-top-color: rgb(75, 83, 98); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(75, 83, 98); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(255, 255, 255); background-color: rgb(58, 63, 75); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(49, 54, 63); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(75, 83, 98) rgb(75, 83, 98) rgb(62, 68, 81); background-color: rgb(58, 63, 75); }
+.markdown-preview[data-use-github-style] { font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); overflow: scroll; background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; border: 0px none; background-color: rgb(231, 231, 231); }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left-width: 4px; border-left-style: solid; border-left-color: rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { border-top-width: 1px; border-top-style: solid; border-top-color: rgb(204, 204, 204); background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157); }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; border: 0px; background: transparent; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; border-radius: 3px; background-color: rgb(247, 247, 247); }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; border-style: solid; border-width: 1px; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors::shadow .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors::shadow .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover::shadow .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover::shadow .horizontal-scrollbar { visibility: visible; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+
+pre.editor-colors,
+.host {
+  background-color: #282c34;
+  color: #abb2bf;
+}
+pre.editor-colors .line.cursor-line,
+.host .line.cursor-line {
+  background-color: rgba(153, 187, 255, 0.04);
+}
+pre.editor-colors .invisible,
+.host .invisible {
+  color: #abb2bf;
+}
+pre.editor-colors .cursor,
+.host .cursor {
+  border-left: 2px solid #528bff;
+}
+pre.editor-colors .selection .region,
+.host .selection .region {
+  background-color: #3e4451;
+}
+pre.editor-colors .bracket-matcher .region,
+.host .bracket-matcher .region {
+  border-bottom: 1px solid #528bff;
+  box-sizing: border-box;
+}
+pre.editor-colors .invisible-character,
+.host .invisible-character {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .indent-guide,
+.host .indent-guide {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .wrap-guide,
+.host .wrap-guide {
+  background-color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .gutter .line-number,
+.host .gutter .line-number {
+  color: #636d83;
+  -webkit-font-smoothing: antialiased;
+}
+pre.editor-colors .gutter .line-number.cursor-line,
+.host .gutter .line-number.cursor-line {
+  color: #abb2bf;
+  background-color: #2c313a;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection,
+.host .gutter .line-number.cursor-line-no-selection {
+  background-color: transparent;
+}
+pre.editor-colors .gutter .line-number .icon-right,
+.host .gutter .line-number .icon-right {
+  color: #abb2bf;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before,
+.host .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before {
+  bottom: -3px;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after,
+.host .gutter:not(.git-diff-icon) .line-number.git-line-removed::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 25px;
+  border-bottom: 1px dotted rgba(224, 82, 82, 0.5);
+  pointer-events: none;
+}
+pre.editor-colors .gutter .line-number.folded,
+.host .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+.host .gutter .line-number:after,
+pre.editor-colors .fold-marker:after,
+.host .fold-marker:after {
+  color: #abb2bf;
+}
+.comment {
+  color: #5c6370;
+  font-style: italic;
+}
+.entity.name.type {
+  color: #e5c07b;
+}
+.entity.other.inherited-class {
+  color: #98c379;
+}
+.keyword {
+  color: #c678dd;
+}
+.keyword.control {
+  color: #c678dd;
+}
+.keyword.operator {
+  color: #abb2bf;
+}
+.keyword.other.special-method {
+  color: #61afef;
+}
+.keyword.other.unit {
+  color: #d19a66;
+}
+.storage {
+  color: #c678dd;
+}
+.storage.type.annotation,
+.storage.type.primitive {
+  color: #c678dd;
+}
+.storage.modifier.package,
+.storage.modifier.import {
+  color: #abb2bf;
+}
+.constant {
+  color: #d19a66;
+}
+.constant.variable {
+  color: #d19a66;
+}
+.constant.character.escape {
+  color: #56b6c2;
+}
+.constant.numeric {
+  color: #d19a66;
+}
+.constant.other.color {
+  color: #56b6c2;
+}
+.constant.other.symbol {
+  color: #56b6c2;
+}
+.variable {
+  color: #e06c75;
+}
+.variable.interpolation {
+  color: #be5046;
+}
+.variable.parameter {
+  color: #abb2bf;
+}
+.string {
+  color: #98c379;
+}
+.string.regexp {
+  color: #56b6c2;
+}
+.string.regexp .source.ruby.embedded {
+  color: #e5c07b;
+}
+.string.other.link {
+  color: #e06c75;
+}
+.punctuation.definition.comment {
+  color: #5c6370;
+}
+.punctuation.definition.method-parameters,
+.punctuation.definition.function-parameters,
+.punctuation.definition.parameters,
+.punctuation.definition.separator,
+.punctuation.definition.seperator,
+.punctuation.definition.array {
+  color: #abb2bf;
+}
+.punctuation.definition.heading,
+.punctuation.definition.identity {
+  color: #61afef;
+}
+.punctuation.definition.bold {
+  color: #e5c07b;
+  font-weight: bold;
+}
+.punctuation.definition.italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.punctuation.section.embedded {
+  color: #be5046;
+}
+.punctuation.section.method,
+.punctuation.section.class,
+.punctuation.section.inner-class {
+  color: #abb2bf;
+}
+.support.class {
+  color: #e5c07b;
+}
+.support.type {
+  color: #56b6c2;
+}
+.support.function {
+  color: #56b6c2;
+}
+.support.function.any-method {
+  color: #61afef;
+}
+.entity.name.function {
+  color: #61afef;
+}
+.entity.name.class,
+.entity.name.type.class {
+  color: #e5c07b;
+}
+.entity.name.section {
+  color: #61afef;
+}
+.entity.name.tag {
+  color: #e06c75;
+}
+.entity.other.attribute-name {
+  color: #d19a66;
+}
+.entity.other.attribute-name.id {
+  color: #61afef;
+}
+.meta.class {
+  color: #e5c07b;
+}
+.meta.class.body {
+  color: #abb2bf;
+}
+.meta.method-call,
+.meta.method {
+  color: #abb2bf;
+}
+.meta.definition.variable {
+  color: #e06c75;
+}
+.meta.link {
+  color: #d19a66;
+}
+.meta.require {
+  color: #61afef;
+}
+.meta.selector {
+  color: #c678dd;
+}
+.meta.separator {
+  background-color: #373b41;
+  color: #abb2bf;
+}
+.meta.tag {
+  color: #abb2bf;
+}
+.none {
+  color: #abb2bf;
+}
+.invalid.deprecated {
+  color: #523d14 !important;
+  background-color: #e0c285 !important;
+}
+.invalid.illegal {
+  color: #ffffff !important;
+  background-color: #e05252 !important;
+}
+.markup.bold {
+  color: #d19a66;
+  font-weight: bold;
+}
+.markup.changed {
+  color: #c678dd;
+}
+.markup.deleted {
+  color: #e06c75;
+}
+.markup.italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.markup.heading .punctuation.definition.heading {
+  color: #61afef;
+}
+.markup.inserted {
+  color: #98c379;
+}
+.markup.list {
+  color: #e06c75;
+}
+.markup.quote {
+  color: #d19a66;
+}
+.markup.raw {
+  color: #98c379;
+}
+.source.cs .keyword.operator {
+  color: #c678dd;
+}
+.source.css .property-name,
+.source.css .property-value {
+  color: #828997;
+}
+.source.css .property-name.support,
+.source.css .property-value.support {
+  color: #abb2bf;
+}
+.source.gfm .markup {
+  -webkit-font-smoothing: auto;
+}
+.source.gfm .markup.heading {
+  color: #e06c75;
+}
+.source.gfm .markup.link {
+  color: #c678dd;
+}
+.source.gfm .link .entity {
+  color: #61afef;
+}
+.source.ini .keyword.other.definition.ini {
+  color: #e06c75;
+}
+.source.java .storage.modifier.import {
+  color: #e5c07b;
+}
+.source.java .storage.type {
+  color: #e5c07b;
+}
+.source.java-properties .meta.key-pair {
+  color: #e06c75;
+}
+.source.java-properties .meta.key-pair > .punctuation {
+  color: #abb2bf;
+}
+.source.json .meta.structure.dictionary.json > .string.quoted.json {
+  color: #e06c75;
+}
+.source.json .meta.structure.dictionary.json > .string.quoted.json > .punctuation.string {
+  color: #e06c75;
+}
+.source.json .meta.structure.dictionary.json > .value.json > .string.quoted.json,
+.source.json .meta.structure.array.json > .value.json > .string.quoted.json,
+.source.json .meta.structure.dictionary.json > .value.json > .string.quoted.json > .punctuation,
+.source.json .meta.structure.array.json > .value.json > .string.quoted.json > .punctuation {
+  color: #98c379;
+}
+.source.json .meta.structure.dictionary.json > .constant.language.json,
+.source.json .meta.structure.array.json > .constant.language.json {
+  color: #56b6c2;
+}
+.source.ruby .constant.other.symbol > .punctuation {
+  color: inherit;
+}
+.source.python .keyword.operator.logical.python {
+  color: #c678dd;
+}
+.source.python .variable.parameter {
+  color: #d19a66;
+}
+</style>
+  </head>
+  <body class='markdown-preview'><h1 id="markdown-syntax">Markdown: Syntax</h1>
+<ul id="ProjectSubmenu">
+    <li><a href="/projects/markdown/" title="Markdown Project Page">Main</a></li>
+    <li><a href="/projects/markdown/basics" title="Markdown Basics">Basics</a></li>
+    <li><a class="selected" title="Markdown Syntax Documentation">Syntax</a></li>
+    <li><a href="/projects/markdown/license" title="Pricing and License Information">License</a></li>
+    <li><a href="/projects/markdown/dingus" title="Online Markdown Web Form">Dingus</a></li>
+</ul>
+
+
+<ul>
+<li><a href="#overview">Overview</a><ul>
+<li><a href="#philosophy">Philosophy</a></li>
+<li><a href="#html">Inline HTML</a></li>
+<li><a href="#autoescape">Automatic Escaping for Special Characters</a></li>
+</ul>
+</li>
+<li><a href="#block">Block Elements</a><ul>
+<li><a href="#p">Paragraphs and Line Breaks</a></li>
+<li><a href="#header">Headers</a></li>
+<li><a href="#blockquote">Blockquotes</a></li>
+<li><a href="#list">Lists</a></li>
+<li><a href="#precode">Code Blocks</a></li>
+<li><a href="#hr">Horizontal Rules</a></li>
+</ul>
+</li>
+<li><a href="#span">Span Elements</a><ul>
+<li><a href="#link">Links</a></li>
+<li><a href="#em">Emphasis</a></li>
+<li><a href="#code">Code</a></li>
+<li><a href="#img">Images</a></li>
+</ul>
+</li>
+<li><a href="#misc">Miscellaneous</a><ul>
+<li><a href="#backslash">Backslash Escapes</a></li>
+<li><a href="#autolink">Automatic Links</a></li>
+</ul>
+</li>
+</ul>
+<p><strong>Note:</strong> This document is itself written using Markdown; you
+can <a href="/projects/markdown/syntax.text">see the source for it by adding &#39;.text&#39; to the URL</a>.</p>
+<hr>
+<h2 id="overview">Overview</h2>
+
+<h3 id="philosophy">Philosophy</h3>
+
+<p>Markdown is intended to be as easy-to-read and easy-to-write as is feasible.</p>
+<p>Readability, however, is emphasized above all else. A Markdown-formatted
+document should be publishable as-is, as plain text, without looking
+like it&#39;s been marked up with tags or formatting instructions. While
+Markdown&#39;s syntax has been influenced by several existing text-to-HTML
+filters -- including <a href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a>, <a href="http://www.aaronsw.com/2002/atx/">atx</a>, <a href="http://textism.com/tools/textile/">Textile</a>, <a href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>,
+<a href="http://www.triptico.com/software/grutatxt.html">Grutatext</a>, and <a href="http://ettext.taint.org/doc/">EtText</a> -- the single biggest source of
+inspiration for Markdown&#39;s syntax is the format of plain text email.</p>
+<p>To this end, Markdown&#39;s syntax is comprised entirely of punctuation
+characters, which punctuation characters have been carefully chosen so
+as to look like what they mean. E.g., asterisks around a word actually
+look like *emphasis*. Markdown lists look like, well, lists. Even
+blockquotes look like quoted passages of text, assuming you&#39;ve ever
+used email.</p>
+<h3 id="html">Inline HTML</h3>
+
+<p>Markdown&#39;s syntax is intended for one purpose: to be used as a
+format for <em>writing</em> for the web.</p>
+<p>Markdown is not a replacement for HTML, or even close to it. Its
+syntax is very small, corresponding only to a very small subset of
+HTML tags. The idea is <em>not</em> to create a syntax that makes it easier
+to insert HTML tags. In my opinion, HTML tags are already easy to
+insert. The idea for Markdown is to make it easy to read, write, and
+edit prose. HTML is a <em>publishing</em> format; Markdown is a <em>writing</em>
+format. Thus, Markdown&#39;s formatting syntax only addresses issues that
+can be conveyed in plain text.</p>
+<p>For any markup that is not covered by Markdown&#39;s syntax, you simply
+use HTML itself. There&#39;s no need to preface it or delimit it to
+indicate that you&#39;re switching from Markdown to HTML; you just use
+the tags.</p>
+<p>The only restrictions are that block-level HTML elements -- e.g. <code>&lt;div&gt;</code>,
+<code>&lt;table&gt;</code>, <code>&lt;pre&gt;</code>, <code>&lt;p&gt;</code>, etc. -- must be separated from surrounding
+content by blank lines, and the start and end tags of the block should
+not be indented with tabs or spaces. Markdown is smart enough not
+to add extra (unwanted) <code>&lt;p&gt;</code> tags around HTML block-level tags.</p>
+<p>For example, to add an HTML table to a Markdown article:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>This&nbsp;is&nbsp;a&nbsp;regular&nbsp;paragraph.</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;table&gt;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>&lt;tr&gt;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>&lt;td&gt;Foo&lt;/td&gt;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>&lt;/tr&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;/table&gt;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>This&nbsp;is&nbsp;another&nbsp;regular&nbsp;paragraph.</span></span></span></div></pre><p>Note that Markdown formatting syntax is not processed within block-level
+HTML tags. E.g., you can&#39;t use Markdown-style <code>*emphasis*</code> inside an
+HTML block.</p>
+<p>Span-level HTML tags -- e.g. <code>&lt;span&gt;</code>, <code>&lt;cite&gt;</code>, or <code>&lt;del&gt;</code> -- can be
+used anywhere in a Markdown paragraph, list item, or header. If you
+want, you can even use HTML tags instead of Markdown formatting; e.g. if
+you&#39;d prefer to use HTML <code>&lt;a&gt;</code> or <code>&lt;img&gt;</code> tags instead of Markdown&#39;s
+link or image syntax, go right ahead.</p>
+<p>Unlike block-level HTML tags, Markdown syntax <em>is</em> processed within
+span-level tags.</p>
+<h3 id="autoescape">Automatic Escaping for Special Characters</h3>
+
+<p>In HTML, there are two characters that demand special treatment: <code>&lt;</code>
+and <code>&amp;</code>. Left angle brackets are used to start tags; ampersands are
+used to denote HTML entities. If you want to use them as literal
+characters, you must escape them as entities, e.g. <code>&amp;lt;</code>, and
+<code>&amp;amp;</code>.</p>
+<p>Ampersands in particular are bedeviling for web writers. If you want to
+write about &#39;AT&amp;T&#39;, you need to write &#39;<code>AT&amp;amp;T</code>&#39;. You even need to
+escape ampersands within URLs. Thus, if you want to link to:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span class="markup underline link http hyperlink"><span>http://images.google.com/images?num=30&amp;q=larry+bird</span></span></span></span></div></pre><p>you need to encode the URL as:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span class="markup underline link http hyperlink"><span>http://images.google.com/images?num=30&amp;amp;q=larry+bird</span></span></span></span></div></pre><p>in your anchor tag <code>href</code> attribute. Needless to say, this is easy to
+forget, and is probably the single most common source of HTML validation
+errors in otherwise well-marked-up web sites.</p>
+<p>Markdown allows you to use these characters naturally, taking care of
+all the necessary escaping for you. If you use an ampersand as part of
+an HTML entity, it remains unchanged; otherwise it will be translated
+into <code>&amp;amp;</code>.</p>
+<p>So, if you want to include a copyright symbol in your article, you can write:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&amp;copy;</span></span></span></div></pre><p>and Markdown will leave it alone. But if you write:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>AT&amp;T</span></span></span></div></pre><p>Markdown will translate it to:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>AT&amp;amp;T</span></span></span></div></pre><p>Similarly, because Markdown supports <a href="#html">inline HTML</a>, if you use
+angle brackets as delimiters for HTML tags, Markdown will treat them as
+such. But if you write:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>4&nbsp;&lt;&nbsp;5</span></span></span></div></pre><p>Markdown will translate it to:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>4&nbsp;&amp;lt;&nbsp;5</span></span></span></div></pre><p>However, inside Markdown code spans and blocks, angle brackets and
+ampersands are <em>always</em> encoded automatically. This makes it easy to use
+Markdown to write about HTML code. (As opposed to raw HTML, which is a
+terrible format for writing about HTML syntax, because every single <code>&lt;</code>
+and <code>&amp;</code> in your example code needs to be escaped.)</p>
+<hr>
+<h2 id="block">Block Elements</h2>
+
+
+<h3 id="p">Paragraphs and Line Breaks</h3>
+
+<p>A paragraph is simply one or more consecutive lines of text, separated
+by one or more blank lines. (A blank line is any line that looks like a
+blank line -- a line containing nothing but spaces or tabs is considered
+blank.) Normal paragraphs should not be indented with spaces or tabs.</p>
+<p>The implication of the &quot;one or more consecutive lines of text&quot; rule is
+that Markdown supports &quot;hard-wrapped&quot; text paragraphs. This differs
+significantly from most other text-to-HTML formatters (including Movable
+Type&#39;s &quot;Convert Line Breaks&quot; option) which translate every line break
+character in a paragraph into a <code>&lt;br /&gt;</code> tag.</p>
+<p>When you <em>do</em> want to insert a <code>&lt;br /&gt;</code> break tag using Markdown, you
+end a line with two or more spaces, then type return.</p>
+<p>Yes, this takes a tad more effort to create a <code>&lt;br /&gt;</code>, but a simplistic
+&quot;every line break is a <code>&lt;br /&gt;</code>&quot; rule wouldn&#39;t work for Markdown.
+Markdown&#39;s email-style <a href="#blockquote">blockquoting</a> and multi-paragraph <a href="#list">list items</a>
+work best -- and look better -- when you format them with hard breaks.</p>
+<h3 id="header">Headers</h3>
+
+<p>Markdown supports two styles of headers, <a href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a> and <a href="http://www.aaronsw.com/2002/atx/">atx</a>.</p>
+<p>Setext-style headers are &quot;underlined&quot; using equal signs (for first-level
+headers) and dashes (for second-level headers). For example:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>This&nbsp;is&nbsp;an&nbsp;H1</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>=============</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>This&nbsp;is&nbsp;an&nbsp;H2</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>-------------</span></span></span></div></pre><p>Any number of underlining <code>=</code>&#39;s or <code>-</code>&#39;s will work.</p>
+<p>Atx-style headers use 1-6 hash characters at the start of the line,
+corresponding to header levels 1-6. For example:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>#&nbsp;This&nbsp;is&nbsp;an&nbsp;H1</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>##&nbsp;This&nbsp;is&nbsp;an&nbsp;H2</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>######&nbsp;This&nbsp;is&nbsp;an&nbsp;H6</span></span></span></div></pre><p>Optionally, you may &quot;close&quot; atx-style headers. This is purely
+cosmetic -- you can use this if you think it looks better. The
+closing hashes don&#39;t even need to match the number of hashes
+used to open the header. (The number of opening hashes
+determines the header level.) :</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>#&nbsp;This&nbsp;is&nbsp;an&nbsp;H1&nbsp;#</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>##&nbsp;This&nbsp;is&nbsp;an&nbsp;H2&nbsp;##</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>###&nbsp;This&nbsp;is&nbsp;an&nbsp;H3&nbsp;######</span></span></span></div></pre><h3 id="blockquote">Blockquotes</h3>
+
+<p>Markdown uses email-style <code>&gt;</code> characters for blockquoting. If you&#39;re
+familiar with quoting passages of text in an email message, then you
+know how to create a blockquote in Markdown. It looks best if you hard
+wrap the text and put a <code>&gt;</code> before every line:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;&nbsp;This&nbsp;is&nbsp;a&nbsp;blockquote&nbsp;with&nbsp;two&nbsp;paragraphs.&nbsp;Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;&nbsp;consectetuer&nbsp;adipiscing&nbsp;elit.&nbsp;Aliquam&nbsp;hendrerit&nbsp;mi&nbsp;posuere&nbsp;lectus.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;&nbsp;Vestibulum&nbsp;enim&nbsp;wisi,&nbsp;viverra&nbsp;nec,&nbsp;fringilla&nbsp;in,&nbsp;laoreet&nbsp;vitae,&nbsp;risus.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;&nbsp;Donec&nbsp;sit&nbsp;amet&nbsp;nisl.&nbsp;Aliquam&nbsp;semper&nbsp;ipsum&nbsp;sit&nbsp;amet&nbsp;velit.&nbsp;Suspendisse</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;&nbsp;id&nbsp;sem&nbsp;consectetuer&nbsp;libero&nbsp;luctus&nbsp;adipiscing.</span></span></span></div></pre><p>Markdown allows you to be lazy and only put the <code>&gt;</code> before the first
+line of a hard-wrapped paragraph:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;&nbsp;This&nbsp;is&nbsp;a&nbsp;blockquote&nbsp;with&nbsp;two&nbsp;paragraphs.&nbsp;Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>consectetuer&nbsp;adipiscing&nbsp;elit.&nbsp;Aliquam&nbsp;hendrerit&nbsp;mi&nbsp;posuere&nbsp;lectus.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Vestibulum&nbsp;enim&nbsp;wisi,&nbsp;viverra&nbsp;nec,&nbsp;fringilla&nbsp;in,&nbsp;laoreet&nbsp;vitae,&nbsp;risus.</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;&nbsp;Donec&nbsp;sit&nbsp;amet&nbsp;nisl.&nbsp;Aliquam&nbsp;semper&nbsp;ipsum&nbsp;sit&nbsp;amet&nbsp;velit.&nbsp;Suspendisse</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>id&nbsp;sem&nbsp;consectetuer&nbsp;libero&nbsp;luctus&nbsp;adipiscing.</span></span></span></div></pre><p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by
+adding additional levels of <code>&gt;</code>:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;&nbsp;This&nbsp;is&nbsp;the&nbsp;first&nbsp;level&nbsp;of&nbsp;quoting.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;&nbsp;&gt;&nbsp;This&nbsp;is&nbsp;nested&nbsp;blockquote.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;&nbsp;Back&nbsp;to&nbsp;the&nbsp;first&nbsp;level.</span></span></span></div></pre><p>Blockquotes can contain other Markdown elements, including headers, lists,
+and code blocks:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;&nbsp;##&nbsp;This&nbsp;is&nbsp;a&nbsp;header.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;&nbsp;1.&nbsp;&nbsp;&nbsp;This&nbsp;is&nbsp;the&nbsp;first&nbsp;list&nbsp;item.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;&nbsp;2.&nbsp;&nbsp;&nbsp;This&nbsp;is&nbsp;the&nbsp;second&nbsp;list&nbsp;item.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;&nbsp;Here&#39;s&nbsp;some&nbsp;example&nbsp;code:</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;shell_exec(&quot;echo&nbsp;$input&nbsp;|&nbsp;$markdown_script&quot;);</span></span></span></div></pre><p>Any decent text editor should make email-style quoting easy. For
+example, with BBEdit, you can make a selection and choose Increase
+Quote Level from the Text menu.</p>
+<h3 id="list">Lists</h3>
+
+<p>Markdown supports ordered (numbered) and unordered (bulleted) lists.</p>
+<p>Unordered lists use asterisks, pluses, and hyphens -- interchangably
+-- as list markers:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;&nbsp;&nbsp;Red</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;&nbsp;&nbsp;Green</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;&nbsp;&nbsp;Blue</span></span></span></div></pre><p>is equivalent to:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>+&nbsp;&nbsp;&nbsp;Red</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>+&nbsp;&nbsp;&nbsp;Green</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>+&nbsp;&nbsp;&nbsp;Blue</span></span></span></div></pre><p>and:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>-&nbsp;&nbsp;&nbsp;Red</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>-&nbsp;&nbsp;&nbsp;Green</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>-&nbsp;&nbsp;&nbsp;Blue</span></span></span></div></pre><p>Ordered lists use numbers followed by periods:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>1.&nbsp;&nbsp;Bird</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>2.&nbsp;&nbsp;McHale</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>3.&nbsp;&nbsp;Parish</span></span></span></div></pre><p>It&#39;s important to note that the actual numbers you use to mark the
+list have no effect on the HTML output Markdown produces. The HTML
+Markdown produces from the above list is:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;ol&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;li&gt;Bird&lt;/li&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;li&gt;McHale&lt;/li&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;li&gt;Parish&lt;/li&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;/ol&gt;</span></span></span></div></pre><p>If you instead wrote the list in Markdown like this:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>1.&nbsp;&nbsp;Bird</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>1.&nbsp;&nbsp;McHale</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>1.&nbsp;&nbsp;Parish</span></span></span></div></pre><p>or even:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>3.&nbsp;Bird</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>1.&nbsp;McHale</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>8.&nbsp;Parish</span></span></span></div></pre><p>you&#39;d get the exact same HTML output. The point is, if you want to,
+you can use ordinal numbers in your ordered Markdown lists, so that
+the numbers in your source match the numbers in your published HTML.
+But if you want to be lazy, you don&#39;t have to.</p>
+<p>If you do use lazy list numbering, however, you should still start the
+list with the number 1. At some point in the future, Markdown may support
+starting ordered lists at an arbitrary number.</p>
+<p>List markers typically start at the left margin, but may be indented by
+up to three spaces. List markers must be followed by one or more spaces
+or a tab.</p>
+<p>To make lists look nice, you can wrap items with hanging indents:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;&nbsp;&nbsp;Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;consectetuer&nbsp;adipiscing&nbsp;elit.</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Aliquam&nbsp;hendrerit&nbsp;mi&nbsp;posuere&nbsp;lectus.&nbsp;Vestibulum&nbsp;enim&nbsp;wisi,</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;viverra&nbsp;nec,&nbsp;fringilla&nbsp;in,&nbsp;laoreet&nbsp;vitae,&nbsp;risus.</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;&nbsp;&nbsp;Donec&nbsp;sit&nbsp;amet&nbsp;nisl.&nbsp;Aliquam&nbsp;semper&nbsp;ipsum&nbsp;sit&nbsp;amet&nbsp;velit.</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Suspendisse&nbsp;id&nbsp;sem&nbsp;consectetuer&nbsp;libero&nbsp;luctus&nbsp;adipiscing.</span></span></span></div></pre><p>But if you want to be lazy, you don&#39;t have to:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;&nbsp;&nbsp;Lorem&nbsp;ipsum&nbsp;dolor&nbsp;sit&nbsp;amet,&nbsp;consectetuer&nbsp;adipiscing&nbsp;elit.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Aliquam&nbsp;hendrerit&nbsp;mi&nbsp;posuere&nbsp;lectus.&nbsp;Vestibulum&nbsp;enim&nbsp;wisi,</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>viverra&nbsp;nec,&nbsp;fringilla&nbsp;in,&nbsp;laoreet&nbsp;vitae,&nbsp;risus.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>*&nbsp;&nbsp;&nbsp;Donec&nbsp;sit&nbsp;amet&nbsp;nisl.&nbsp;Aliquam&nbsp;semper&nbsp;ipsum&nbsp;sit&nbsp;amet&nbsp;velit.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Suspendisse&nbsp;id&nbsp;sem&nbsp;consectetuer&nbsp;libero&nbsp;luctus&nbsp;adipiscing.</span></span></span></div></pre><p>If list items are separated by blank lines, Markdown will wrap the
+items in <code>&lt;p&gt;</code> tags in the HTML output. For example, this input:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;&nbsp;&nbsp;Bird</span></span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;&nbsp;&nbsp;Magic</span></span></span></div></pre><p>will turn into:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;ul&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;li&gt;Bird&lt;/li&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;li&gt;Magic&lt;/li&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;/ul&gt;</span></span></span></div></pre><p>But this:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;&nbsp;&nbsp;Bird</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;&nbsp;&nbsp;Magic</span></span></span></div></pre><p>will turn into:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;ul&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;li&gt;&lt;p&gt;Bird&lt;/p&gt;&lt;/li&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;li&gt;&lt;p&gt;Magic&lt;/p&gt;&lt;/li&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;/ul&gt;</span></span></span></div></pre><p>List items may consist of multiple paragraphs. Each subsequent
+paragraph in a list item must be indented by either 4 spaces
+or one tab:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>1.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;list&nbsp;item&nbsp;with&nbsp;two&nbsp;paragraphs.&nbsp;Lorem&nbsp;ipsum&nbsp;dolor</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>sit&nbsp;amet,&nbsp;consectetuer&nbsp;adipiscing&nbsp;elit.&nbsp;Aliquam&nbsp;hendrerit</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;mi&nbsp;posuere&nbsp;lectus.</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>Vestibulum&nbsp;enim&nbsp;wisi,&nbsp;viverra&nbsp;nec,&nbsp;fringilla&nbsp;in,&nbsp;laoreet</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;vitae,&nbsp;risus.&nbsp;Donec&nbsp;sit&nbsp;amet&nbsp;nisl.&nbsp;Aliquam&nbsp;semper&nbsp;ipsum</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;sit&nbsp;amet&nbsp;velit.</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>2.&nbsp;&nbsp;Suspendisse&nbsp;id&nbsp;sem&nbsp;consectetuer&nbsp;libero&nbsp;luctus&nbsp;adipiscing.</span></span></span></div></pre><p>It looks nice if you indent every line of the subsequent
+paragraphs, but here again, Markdown will allow you to be
+lazy:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;list&nbsp;item&nbsp;with&nbsp;two&nbsp;paragraphs.</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>This&nbsp;is&nbsp;the&nbsp;second&nbsp;paragraph&nbsp;in&nbsp;the&nbsp;list&nbsp;item.&nbsp;You&#39;re</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>only&nbsp;required&nbsp;to&nbsp;indent&nbsp;the&nbsp;first&nbsp;line.&nbsp;Lorem&nbsp;ipsum&nbsp;dolor</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>sit&nbsp;amet,&nbsp;consectetuer&nbsp;adipiscing&nbsp;elit.</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;&nbsp;&nbsp;Another&nbsp;item&nbsp;in&nbsp;the&nbsp;same&nbsp;list.</span></span></span></div></pre><p>To put a blockquote within a list item, the blockquote&#39;s <code>&gt;</code>
+delimiters need to be indented:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;&nbsp;&nbsp;A&nbsp;list&nbsp;item&nbsp;with&nbsp;a&nbsp;blockquote:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>&gt;&nbsp;This&nbsp;is&nbsp;a&nbsp;blockquote</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;inside&nbsp;a&nbsp;list&nbsp;item.</span></span></span></div></pre><p>To put a code block within a list item, the code block needs
+to be indented <em>twice</em> -- 8 spaces or two tabs:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;&nbsp;&nbsp;A&nbsp;list&nbsp;item&nbsp;with&nbsp;a&nbsp;code&nbsp;block:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>&lt;code&nbsp;goes&nbsp;here&gt;</span></span></span></div></pre><p>It&#39;s worth noting that it&#39;s possible to trigger an ordered list by
+accident, by writing something like this:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>1986.&nbsp;What&nbsp;a&nbsp;great&nbsp;season.</span></span></span></div></pre><p>In other words, a <em>number-period-space</em> sequence at the beginning of a
+line. To avoid this, you can backslash-escape the period:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>1986\.&nbsp;What&nbsp;a&nbsp;great&nbsp;season.</span></span></span></div></pre><h3 id="precode">Code Blocks</h3>
+
+<p>Pre-formatted code blocks are used for writing about programming or
+markup source code. Rather than forming normal paragraphs, the lines
+of a code block are interpreted literally. Markdown wraps a code block
+in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
+<p>To produce a code block in Markdown, simply indent every line of the
+block by at least 4 spaces or 1 tab. For example, given this input:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>This&nbsp;is&nbsp;a&nbsp;normal&nbsp;paragraph:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>This&nbsp;is&nbsp;a&nbsp;code&nbsp;block.</span></span></span></div></pre><p>Markdown will generate:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;p&gt;This&nbsp;is&nbsp;a&nbsp;normal&nbsp;paragraph:&lt;/p&gt;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;pre&gt;&lt;code&gt;This&nbsp;is&nbsp;a&nbsp;code&nbsp;block.</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;/code&gt;&lt;/pre&gt;</span></span></span></div></pre><p>One level of indentation -- 4 spaces or 1 tab -- is removed from each
+line of the code block. For example, this:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Here&nbsp;is&nbsp;an&nbsp;example&nbsp;of&nbsp;AppleScript:</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>tell&nbsp;application&nbsp;&quot;Foo&quot;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>beep</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>end&nbsp;tell</span></span></span></div></pre><p>will turn into:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;p&gt;Here&nbsp;is&nbsp;an&nbsp;example&nbsp;of&nbsp;AppleScript:&lt;/p&gt;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;pre&gt;&lt;code&gt;tell&nbsp;application&nbsp;&quot;Foo&quot;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>beep</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>end&nbsp;tell</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;/code&gt;&lt;/pre&gt;</span></span></span></div></pre><p>A code block continues until it reaches a line that is not indented
+(or the end of the article).</p>
+<p>Within a code block, ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>)
+are automatically converted into HTML entities. This makes it very
+easy to include example HTML source code using Markdown -- just paste
+it and indent it, and Markdown will handle the hassle of encoding the
+ampersands and angle brackets. For example, this:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>&lt;div&nbsp;class=&quot;footer&quot;&gt;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>&amp;copy;&nbsp;2004&nbsp;Foo&nbsp;Corporation</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>&lt;/div&gt;</span></span></span></div></pre><p>will turn into:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;pre&gt;&lt;code&gt;&amp;lt;div&nbsp;class=&quot;footer&quot;&amp;gt;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>&amp;amp;copy;&nbsp;2004&nbsp;Foo&nbsp;Corporation</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&amp;lt;/div&amp;gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;/code&gt;&lt;/pre&gt;</span></span></span></div></pre><p>Regular Markdown syntax is not processed within code blocks. E.g.,
+asterisks are just literal asterisks within a code block. This means
+it&#39;s also easy to use Markdown to write about Markdown&#39;s own syntax.</p>
+<h3 id="hr">Horizontal Rules</h3>
+
+<p>You can produce a horizontal rule tag (<code>&lt;hr /&gt;</code>) by placing three or
+more hyphens, asterisks, or underscores on a line by themselves. If you
+wish, you may use spaces between the hyphens or asterisks. Each of the
+following lines will produce a horizontal rule:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>&nbsp;*&nbsp;*</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>**</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>****</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>-&nbsp;-&nbsp;-</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>---------------------------------------</span></span></span></div></pre><hr>
+<h2 id="span">Span Elements</h2>
+
+<h3 id="link">Links</h3>
+
+<p>Markdown supports two style of links: <em>inline</em> and <em>reference</em>.</p>
+<p>In both styles, the link text is delimited by [square brackets].</p>
+<p>To create an inline link, use a set of regular parentheses immediately
+after the link text&#39;s closing square bracket. Inside the parentheses,
+put the URL where you want the link to point, along with an <em>optional</em>
+title for the link, surrounded in quotes. For example:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>This&nbsp;is&nbsp;[an&nbsp;example](</span><span class="markup underline link http hyperlink"><span>http://example.com/</span></span><span>&nbsp;&quot;Title&quot;)&nbsp;inline&nbsp;link.</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[This&nbsp;link](</span><span class="markup underline link http hyperlink"><span>http://example.net/</span></span><span>)&nbsp;has&nbsp;no&nbsp;title&nbsp;attribute.</span></span></span></div></pre><p>Will produce:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;p&gt;This&nbsp;is&nbsp;&lt;a&nbsp;href=&quot;</span><span class="markup underline link http hyperlink"><span>http://example.com/</span></span><span>&quot;&nbsp;title=&quot;Title&quot;&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>an&nbsp;example&lt;/a&gt;&nbsp;inline&nbsp;link.&lt;/p&gt;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;p&gt;&lt;a&nbsp;href=&quot;</span><span class="markup underline link http hyperlink"><span>http://example.net/</span></span><span>&quot;&gt;This&nbsp;link&lt;/a&gt;&nbsp;has&nbsp;no</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>title&nbsp;attribute.&lt;/p&gt;</span></span></span></div></pre><p>If you&#39;re referring to a local resource on the same server, you can
+use relative paths:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>See&nbsp;my&nbsp;[About](/about/)&nbsp;page&nbsp;for&nbsp;details.</span></span></span></div></pre><p>Reference-style links use a second set of square brackets, inside
+which you place a label of your choosing to identify the link:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>This&nbsp;is&nbsp;[an&nbsp;example][id]&nbsp;reference-style&nbsp;link.</span></span></span></div></pre><p>You can optionally use a space to separate the sets of brackets:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>This&nbsp;is&nbsp;[an&nbsp;example]&nbsp;[id]&nbsp;reference-style&nbsp;link.</span></span></span></div></pre><p>Then, anywhere in the document, you define your link label like this,
+on a line by itself:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[id]:&nbsp;</span><span class="markup underline link http hyperlink"><span>http://example.com/</span></span><span>&nbsp;&nbsp;&quot;Optional&nbsp;Title&nbsp;Here&quot;</span></span></span></div></pre><p>That is:</p>
+<ul>
+<li>Square brackets containing the link identifier (optionally
+indented from the left margin using up to three spaces);</li>
+<li>followed by a colon;</li>
+<li>followed by one or more spaces (or tabs);</li>
+<li>followed by the URL for the link;</li>
+<li>optionally followed by a title attribute for the link, enclosed
+in double or single quotes, or enclosed in parentheses.</li>
+</ul>
+<p>The following three link definitions are equivalent:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[foo]:&nbsp;</span><span class="markup underline link http hyperlink"><span>http://example.com/</span></span><span>&nbsp;&nbsp;&quot;Optional&nbsp;Title&nbsp;Here&quot;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[foo]:&nbsp;</span><span class="markup underline link http hyperlink"><span>http://example.com/</span></span><span>&nbsp;&nbsp;&#39;Optional&nbsp;Title&nbsp;Here&#39;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[foo]:&nbsp;</span><span class="markup underline link http hyperlink"><span>http://example.com/</span></span><span>&nbsp;&nbsp;(Optional&nbsp;Title&nbsp;Here)</span></span></span></div></pre><p><strong>Note:</strong> There is a known bug in Markdown.pl 1.0.1 which prevents
+single quotes from being used to delimit link titles.</p>
+<p>The link URL may, optionally, be surrounded by angle brackets:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[id]:&nbsp;&lt;</span><span class="markup underline link http hyperlink"><span>http://example.com/</span></span><span>&gt;&nbsp;&nbsp;&quot;Optional&nbsp;Title&nbsp;Here&quot;</span></span></span></div></pre><p>You can put the title attribute on the next line and use extra spaces
+or tabs for padding, which tends to look better with longer URLs:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[id]:&nbsp;</span><span class="markup underline link http hyperlink"><span>http://example.com/longish/path/to/resource/here</span></span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>&quot;Optional&nbsp;Title&nbsp;Here&quot;</span></span></span></div></pre><p>Link definitions are only used for creating links during Markdown
+processing, and are stripped from your document in the HTML output.</p>
+<p>Link definition names may consist of letters, numbers, spaces, and
+punctuation -- but they are <em>not</em> case sensitive. E.g. these two
+links:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[link&nbsp;text][a]</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[link&nbsp;text][A]</span></span></span></div></pre><p>are equivalent.</p>
+<p>The <em>implicit link name</em> shortcut allows you to omit the name of the
+link, in which case the link text itself is used as the name.
+Just use an empty set of square brackets -- e.g., to link the word
+&quot;Google&quot; to the google.com web site, you could simply write:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[Google][]</span></span></span></div></pre><p>And then define the link:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[Google]:&nbsp;</span><span class="markup underline link http hyperlink"><span>http://google.com/</span></span></span></span></div></pre><p>Because link names may contain spaces, this shortcut even works for
+multiple words in the link text:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Visit&nbsp;[Daring&nbsp;Fireball][]&nbsp;for&nbsp;more&nbsp;information.</span></span></span></div></pre><p>And then define the link:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[Daring&nbsp;Fireball]:&nbsp;</span><span class="markup underline link http hyperlink"><span>http://daringfireball.net/</span></span></span></span></div></pre><p>Link definitions can be placed anywhere in your Markdown document. I
+tend to put them immediately after each paragraph in which they&#39;re
+used, but if you want, you can put them all at the end of your
+document, sort of like footnotes.</p>
+<p>Here&#39;s an example of reference links in action:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>I&nbsp;get&nbsp;10&nbsp;times&nbsp;more&nbsp;traffic&nbsp;from&nbsp;[Google]&nbsp;[1]&nbsp;than&nbsp;from</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[Yahoo]&nbsp;[2]&nbsp;or&nbsp;[MSN]&nbsp;[3].</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>[1]:&nbsp;</span><span class="markup underline link http hyperlink"><span>http://google.com/</span></span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Google&quot;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;[2]:&nbsp;</span><span class="markup underline link http hyperlink"><span>http://search.yahoo.com/</span></span><span>&nbsp;&nbsp;&quot;Yahoo&nbsp;Search&quot;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;[3]:&nbsp;</span><span class="markup underline link http hyperlink"><span>http://search.msn.com/</span></span><span>&nbsp;&nbsp;&nbsp;&nbsp;&quot;MSN&nbsp;Search&quot;</span></span></span></div></pre><p>Using the implicit link name shortcut, you could instead write:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>I&nbsp;get&nbsp;10&nbsp;times&nbsp;more&nbsp;traffic&nbsp;from&nbsp;[Google][]&nbsp;than&nbsp;from</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[Yahoo][]&nbsp;or&nbsp;[MSN][].</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>[google]:&nbsp;</span><span class="markup underline link http hyperlink"><span>http://google.com/</span></span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Google&quot;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;[yahoo]:&nbsp;&nbsp;</span><span class="markup underline link http hyperlink"><span>http://search.yahoo.com/</span></span><span>&nbsp;&nbsp;&quot;Yahoo&nbsp;Search&quot;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;&nbsp;[msn]:&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="markup underline link http hyperlink"><span>http://search.msn.com/</span></span><span>&nbsp;&nbsp;&nbsp;&nbsp;&quot;MSN&nbsp;Search&quot;</span></span></span></div></pre><p>Both of the above examples will produce the following HTML output:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;p&gt;I&nbsp;get&nbsp;10&nbsp;times&nbsp;more&nbsp;traffic&nbsp;from&nbsp;&lt;a&nbsp;href=&quot;</span><span class="markup underline link http hyperlink"><span>http://google.com/</span></span><span>&quot;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>title=&quot;Google&quot;&gt;Google&lt;/a&gt;&nbsp;than&nbsp;from</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;a&nbsp;href=&quot;</span><span class="markup underline link http hyperlink"><span>http://search.yahoo.com/</span></span><span>&quot;&nbsp;title=&quot;Yahoo&nbsp;Search&quot;&gt;Yahoo&lt;/a&gt;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>or&nbsp;&lt;a&nbsp;href=&quot;</span><span class="markup underline link http hyperlink"><span>http://search.msn.com/</span></span><span>&quot;&nbsp;title=&quot;MSN&nbsp;Search&quot;&gt;MSN&lt;/a&gt;.&lt;/p&gt;</span></span></span></div></pre><p>For comparison, here is the same paragraph written using
+Markdown&#39;s inline link style:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>I&nbsp;get&nbsp;10&nbsp;times&nbsp;more&nbsp;traffic&nbsp;from&nbsp;[Google](</span><span class="markup underline link http hyperlink"><span>http://google.com/</span></span><span>&nbsp;&quot;Google&quot;)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>than&nbsp;from&nbsp;[Yahoo](</span><span class="markup underline link http hyperlink"><span>http://search.yahoo.com/</span></span><span>&nbsp;&quot;Yahoo&nbsp;Search&quot;)&nbsp;or</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[MSN](</span><span class="markup underline link http hyperlink"><span>http://search.msn.com/</span></span><span>&nbsp;&quot;MSN&nbsp;Search&quot;).</span></span></span></div></pre><p>The point of reference-style links is not that they&#39;re easier to
+write. The point is that with reference-style links, your document
+source is vastly more readable. Compare the above examples: using
+reference-style links, the paragraph itself is only 81 characters
+long; with inline-style links, it&#39;s 176 characters; and as raw HTML,
+it&#39;s 234 characters. In the raw HTML, there&#39;s more markup than there
+is text.</p>
+<p>With Markdown&#39;s reference-style links, a source document much more
+closely resembles the final output, as rendered in a browser. By
+allowing you to move the markup-related metadata out of the paragraph,
+you can add links without interrupting the narrative flow of your
+prose.</p>
+<h3 id="em">Emphasis</h3>
+
+<p>Markdown treats asterisks (<code>*</code>) and underscores (<code>_</code>) as indicators of
+emphasis. Text wrapped with one <code>*</code> or <code>_</code> will be wrapped with an
+HTML <code>&lt;em&gt;</code> tag; double <code>*</code>&#39;s or <code>_</code>&#39;s will be wrapped with an HTML
+<code>&lt;strong&gt;</code> tag. E.g., this input:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>single&nbsp;asterisks*</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>_single&nbsp;underscores_</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta bullet-point star text"><span class="punctuation definition item text"><span>*</span></span><span>*double&nbsp;asterisks**</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>__double&nbsp;underscores__</span></span></span></div></pre><p>will produce:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;em&gt;single&nbsp;asterisks&lt;/em&gt;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;em&gt;single&nbsp;underscores&lt;/em&gt;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;strong&gt;double&nbsp;asterisks&lt;/strong&gt;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;strong&gt;double&nbsp;underscores&lt;/strong&gt;</span></span></span></div></pre><p>You can use whichever style you prefer; the lone restriction is that
+the same character must be used to open and close an emphasis span.</p>
+<p>Emphasis can be used in the middle of a word:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>un*frigging*believable</span></span></span></div></pre><p>But if you surround an <code>*</code> or <code>_</code> with spaces, it&#39;ll be treated as a
+literal asterisk or underscore.</p>
+<p>To produce a literal asterisk or underscore at a position where it
+would otherwise be used as an emphasis delimiter, you can backslash
+escape it:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>\*this&nbsp;text&nbsp;is&nbsp;surrounded&nbsp;by&nbsp;literal&nbsp;asterisks\*</span></span></span></div></pre><h3 id="code">Code</h3>
+
+<p>To indicate a span of code, wrap it with backtick quotes (<code>` </code>).
+Unlike a pre-formatted code block, a code span indicates code within a
+normal paragraph. For example:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Use&nbsp;the&nbsp;`printf()`&nbsp;function.</span></span></span></div></pre><p>will produce:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;p&gt;Use&nbsp;the&nbsp;&lt;code&gt;printf()&lt;/code&gt;&nbsp;function.&lt;/p&gt;</span></span></span></div></pre><p>To include a literal backtick character within a code span, you can use
+multiple backticks as the opening and closing delimiters:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>``There&nbsp;is&nbsp;a&nbsp;literal&nbsp;backtick&nbsp;(`)&nbsp;here.``</span></span></span></div></pre><p>which will produce this:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;p&gt;&lt;code&gt;There&nbsp;is&nbsp;a&nbsp;literal&nbsp;backtick&nbsp;(`)&nbsp;here.&lt;/code&gt;&lt;/p&gt;</span></span></span></div></pre><p>The backtick delimiters surrounding a code span may include spaces --
+one after the opening, one before the closing. This allows you to place
+literal backtick characters at the beginning or end of a code span:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>A&nbsp;single&nbsp;backtick&nbsp;in&nbsp;a&nbsp;code&nbsp;span:&nbsp;``&nbsp;`&nbsp;``</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>A&nbsp;backtick-delimited&nbsp;string&nbsp;in&nbsp;a&nbsp;code&nbsp;span:&nbsp;``&nbsp;`foo`&nbsp;``</span></span></span></div></pre><p>will produce:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;p&gt;A&nbsp;single&nbsp;backtick&nbsp;in&nbsp;a&nbsp;code&nbsp;span:&nbsp;&lt;code&gt;`&lt;/code&gt;&lt;/p&gt;</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;p&gt;A&nbsp;backtick-delimited&nbsp;string&nbsp;in&nbsp;a&nbsp;code&nbsp;span:&nbsp;&lt;code&gt;`foo`&lt;/code&gt;&lt;/p&gt;</span></span></span></div></pre><p>With a code span, ampersands and angle brackets are encoded as HTML
+entities automatically, which makes it easy to include example HTML
+tags. Markdown will turn this:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>Please&nbsp;don&#39;t&nbsp;use&nbsp;any&nbsp;`&lt;blink&gt;`&nbsp;tags.</span></span></span></div></pre><p>into:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;p&gt;Please&nbsp;don&#39;t&nbsp;use&nbsp;any&nbsp;&lt;code&gt;&amp;lt;blink&amp;gt;&lt;/code&gt;&nbsp;tags.&lt;/p&gt;</span></span></span></div></pre><p>You can write this:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>`&amp;#8212;`&nbsp;is&nbsp;the&nbsp;decimal-encoded&nbsp;equivalent&nbsp;of&nbsp;`&amp;mdash;`.</span></span></span></div></pre><p>to produce:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;p&gt;&lt;code&gt;&amp;amp;#8212;&lt;/code&gt;&nbsp;is&nbsp;the&nbsp;decimal-encoded</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>equivalent&nbsp;of&nbsp;&lt;code&gt;&amp;amp;mdash;&lt;/code&gt;.&lt;/p&gt;</span></span></span></div></pre><h3 id="img">Images</h3>
+
+<p>Admittedly, it&#39;s fairly difficult to devise a &quot;natural&quot; syntax for
+placing images into a plain text document format.</p>
+<p>Markdown uses an image syntax that is intended to resemble the syntax
+for links, allowing for two styles: <em>inline</em> and <em>reference</em>.</p>
+<p>Inline image syntax looks like this:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>![Alt&nbsp;text](/path/to/img.jpg)</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>![Alt&nbsp;text](/path/to/img.jpg&nbsp;&quot;Optional&nbsp;title&quot;)</span></span></span></div></pre><p>That is:</p>
+<ul>
+<li>An exclamation mark: <code>!</code>;</li>
+<li>followed by a set of square brackets, containing the <code>alt</code>
+attribute text for the image;</li>
+<li>followed by a set of parentheses, containing the URL or path to
+the image, and an optional <code>title</code> attribute enclosed in double
+or single quotes.</li>
+</ul>
+<p>Reference-style image syntax looks like this:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>![Alt&nbsp;text][id]</span></span></span></div></pre><p>Where &quot;id&quot; is the name of a defined image reference. Image references
+are defined using syntax identical to link references:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[id]:&nbsp;url/to/image&nbsp;&nbsp;&quot;Optional&nbsp;title&nbsp;attribute&quot;</span></span></span></div></pre><p>As of this writing, Markdown has no syntax for specifying the
+dimensions of an image; if this is important to you, you can simply
+use regular HTML <code>&lt;img&gt;</code> tags.</p>
+<hr>
+<h2 id="misc">Miscellaneous</h2>
+
+<h3 id="autolink">Automatic Links</h3>
+
+<p>Markdown supports a shortcut style for creating &quot;automatic&quot; links for URLs and email addresses: simply surround the URL or email address with angle brackets. What this means is that if you want to show the actual text of a URL or email address, and also have it be a clickable link, you can do this:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;</span><span class="markup underline link http hyperlink"><span>http://example.com/</span></span><span>&gt;</span></span></span></div></pre><p>Markdown will turn this into:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;a&nbsp;href=&quot;</span><span class="markup underline link http hyperlink"><span>http://example.com/</span></span><span>&quot;&gt;</span><span class="markup underline link http hyperlink"><span>http://example.com/</span></span><span>&lt;/a&gt;</span></span></span></div></pre><p>Automatic links for email addresses work similarly, except that
+Markdown will also perform a bit of randomized decimal and hex
+entity-encoding to help obscure your address from address-harvesting
+spambots. For example, Markdown will turn this:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;address@example.com&gt;</span></span></span></div></pre><p>into something like this:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&lt;a&nbsp;href=&quot;&amp;#x6D;&amp;#x61;i&amp;#x6C;&amp;#x74;&amp;#x6F;:&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;&amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&amp;#109;&quot;&gt;&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;</span></span></span></div></pre><p>which will render in a browser as a clickable link to &quot;address@example.com&quot;.</p>
+<p>(This sort of entity-encoding trick will indeed fool many, if not
+most, address-harvesting bots, but it definitely won&#39;t fool all of
+them. It&#39;s better than nothing, but an address published in this way
+will probably eventually start receiving spam.)</p>
+<h3 id="backslash">Backslash Escapes</h3>
+
+<p>Markdown allows you to use backslash escapes to generate literal
+characters which would otherwise have special meaning in Markdown&#39;s
+formatting syntax. For example, if you wanted to surround a word
+with literal asterisks (instead of an HTML <code>&lt;em&gt;</code> tag), you can use
+backslashes before the asterisks, like this:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>\*literal&nbsp;asterisks\*</span></span></span></div></pre><p>Markdown provides backslash escapes for the following characters:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>\&nbsp;&nbsp;&nbsp;backslash</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>`&nbsp;&nbsp;&nbsp;backtick</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>*&nbsp;&nbsp;&nbsp;asterisk</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>_&nbsp;&nbsp;&nbsp;underscore</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>{}&nbsp;&nbsp;curly&nbsp;braces</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[]&nbsp;&nbsp;square&nbsp;brackets</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>()&nbsp;&nbsp;parentheses</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>#&nbsp;&nbsp;&nbsp;hash&nbsp;mark</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>+&nbsp;&nbsp;&nbsp;&nbsp;plus&nbsp;sign</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>-&nbsp;&nbsp;&nbsp;&nbsp;minus&nbsp;sign&nbsp;(hyphen)</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>.&nbsp;&nbsp;&nbsp;dot</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>!&nbsp;&nbsp;&nbsp;exclamation&nbsp;mark</span></span></span></div></pre></body>
+</html>
